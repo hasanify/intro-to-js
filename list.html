@@ -1,0 +1,91 @@
+<HTML>
+<head>
+	<title>hd</title>
+</head>
+<body>
+<input type="text" id="filterInput">
+<ul id="names">
+	<li>
+		<h1>A</h1>
+	</li>
+	<li class="items">
+		<a href="#">
+		Ali
+	</a>
+	</li>
+	<li class="items"><a href="#">
+		Ahmad</a>
+	</li>
+	<li class="items"><a href="#">
+		Ahad</a>
+	</li>
+	<li class="items"><a href="#">
+		Aman</a>
+	</li>
+		<li>
+		<h1>B</h1>
+	</li>
+	<li class="items"><a href="#">
+		Ball</a>
+	</li>
+	<li class="items"><a href="#">
+		Boy</a>
+	</li>
+	<li class="items"><a href="#">
+		Brian</a>
+	</li>
+	<li class="items"><a href="#">
+		Britain</a>
+	</li>
+		<li>
+		<h1>C</h1>
+	</li>
+	<li class="items"><a href="#">
+		Car</a>
+	</li>
+	<li class="items"><a href="#">
+		Cat</a>
+	</li>
+	<li class="items"><a href="#">
+		Cathy</a>
+	</li>
+	<li class="items"><a href="#">
+		Carnival</a>
+	</li>
+
+</ul>
+<div id="update"></div>
+
+
+<script type="text/javascript">
+	let filterInput = document.getElementById('filterInput');
+	filterInput.addEventListener('keyup', checkx);
+	function checkx()
+	{
+	let filterValue = document.getElementById('filterInput').value.toUpperCase();
+// Get names ul
+let ul = document.getElementById('names');
+
+//get items
+let li = ul.querySelectorAll('li.items');
+// Loop through list
+
+for (let i = 0; i < li.length; i++) {
+	//console.log(i);
+	let a = li[i].getElementsByTagName('a')[0];
+
+	// if matched
+	if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+		li[i].style.display = '';
+		console.log(li[i]);
+	} else {
+		li[i].style.display = 'none';
+	}
+}
+
+	}
+
+
+</script>
+</body>
+</HTML>

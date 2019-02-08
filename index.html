@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>JavaScriptIntro</title>
+    </head>
+        <body id="body">
+            <div style="text-align: center;">
+<form method="post" name="myForm" action="" onsubmit="event.preventDefault(); validateForm();"> 
+    <label>First Name </label>
+    <input type="text" name="firstName" id="firstName"/><br><br>
+    <div id="fname"></div>
+    <label>Last Name </label>
+    <input type="text" name="lastName" id="lastName"/><br><br>
+    <label>Background</label>
+    <select name="background" id="background" onchange="changeBackground(this)">
+        <option value="red">Red</option>
+         <option value="white">White</option>
+          <option value="pink">Pink</option>
+           <option value="Green">Green</option>
+           </select>
+           <br><br>
+    <input type="submit" value="Submit"/>
+    </form>
+              
+        </div>
+            <script>
+            /*  var users = [
+                {
+                    name: 'Hasan Ali',
+                    age : '18'
+                },
+                {
+                    name: 'Habiba Zainab',
+                    age : '24'
+                },
+                {
+                    name: 'Mohd Anwer',
+                    age : '54'
+                },
+                {
+                    name: 'Haider Ali',
+                    age : '19'
+                }
+                ];
+                for (var i = 0; i<4; i++)
+                {
+                   console.log (users[i].name + ' is ' + users[i].age + ' years old'); 
+                   
+                }
+                
+                function changeText() {
+                   var heading = document.getElementById('heading');
+                   heading.innerHTML = 'It was clicked!!!';
+               }
+               function showTime() {
+                   var heading = document.getElementById('time');
+                   heading.innerHTML = Date();
+               }
+               
+             function newTestOn() {
+                   var hover = document.getElementById('hover');
+                   hover.innerHTML = 'Your mouse is on the button';
+               }
+               function newTestOut() {
+                   var hover = document.getElementById('hover');
+                   hover.innerHTML = '';
+               }
+             */
+function changeBackground(x)
+{
+   // console.log(x.value);
+    var body = document.getElementById('body');
+    body.style.backgroundColor = x.value;
+}
+function validateForm()
+{
+    var firstName = document.forms["myForm"]["firstName"].value;
+   // var fname = document.getElementById('fname');
+    //console.log(firstName); 
+    if (firstName == null || firstName == "")
+    {
+        alert("First Name Is Required");
+       // fname.innerHTML = "Required";
+        return false;
+    }
+     if (firstName.length < 5 || firstName.length > 12)
+    {
+        alert("First Name Should Be Between 5 and 12 Characters");
+       // fname.innerHTML = "Required";
+        return false;
+    }
+}
+            </script>
+
+
+        </body>
+</html>
